@@ -1,28 +1,94 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: cursive;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: rgb(255, 187, 201);
 }
 
-.site-identity{
+nav {
+    background-color: rgb(255, 255, 255);
+    padding: 20px 0;
+    text-align: center;
+}
+
+.site-identity {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-left: 50px;
 }
 
-.site-identity img{
-    width: 50px;
-    height: 50px;
+.site-identity img {
+    width: 65px;
+    height: 65px;
 }
 
-nav {
-    background-color: #222;
-    padding: 15px 0;
+.burger-menu-btn {
+    display: none;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-container-mobile {
+    position: fixed;
+    top: 10px;
+    right: -250px; 
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+}
+
+.menu-container-mobile.active {
+    right: 0; 
+}
+
+.menu-container-mobile.active .btn {
+    display: block; 
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+.nav-menu-mobile {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-menu-mobile li {
+    margin: 20px 0;
+}
+
+.nav-menu-mobile li a {
+    color: rgb(176, 127, 191) !important; 
+    font-size: 20px; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-menu-mobile li a:hover{
+    text-decoration: underline;
+}
+
+.nav-menu-mobile a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.close-btn {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
 nav ul {
@@ -37,37 +103,28 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #f4f4f4;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 nav ul li a:hover {
-    color: crimson;
+    color: rgb(255, 105, 130);
 }
 
 .container {
-    width: 60%;
-    margin: 60px auto;
-    background: #fff;
-    padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    flex-wrap: wrap;
-}
-
-.container p {
-    text-align: center;
-    color: #222;
-    font-size: 13px;
+    width: 50%;
+    margin: 50px auto;
+    background: white;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 h2, h3 {
     text-align: center;
-    color: #222;
-    font-size: 38px;
+    color: rgb(255, 105, 130);
 }
 
 form {
@@ -75,39 +132,72 @@ form {
     flex-direction: column;
 }
 
+.form-quote{
+    text-align: center;
+    font-size: 15px;
+}
+
 label {
-    margin-top: 12px;
-    font-weight: 600;
-    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 input, textarea {
-    padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     width: 100%;
-    font-size: 16px;
 }
 
 button {
-    margin-top: 20px;
-    padding: 12px;
-    background-color: rgb(197, 21, 65);
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgb(176, 127, 191);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 17px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: rgb(197, 21, 65);
+    background-color: rgb(224, 180, 237);
 }
 
 .hidden {
     display: none;
-    
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .burger-menu-btn {
+        display: block;
+    }
+
+    .site-identity {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .btn {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input, textarea, button {
+        font-size: 14px;
+        padding: 8px;
+    }
 }
