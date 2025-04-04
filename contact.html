@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+
     <title>Contact Us</title>
+    <!-- External CSS files for styling on different devices -->
+
     <link rel="stylesheet" href="assets/contactstyle.css">
     <link rel="stylesheet" href="assets/mobile.css">
     <link rel="stylesheet" href="assets/tablet.css">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav>
         <ul class="site-identity">
+
+            <!-- Site Logo -->
             <img src="assets/logo/logo-image.jpg" alt="site-logo">
+            
+            <!-- Burger menu icon for mobile -->
             <img src="assets/logo/icons8-menu-50.png" class="burger-menu-btn" alt="" onclick="toggleMenu()">
+
+            <!-- Navigation links -->
             <li class="btn"><a href="index.html">Home</a></li>
             <li class="btn"><a href="index.html">About</a></li>
             <li class="btn"><a href="contact.html">Contact Us</a></li> 
         </ul>
     </nav>
 
+    <!-- Mobile Menu (hidden by default, toggled by burger icon) -->
 <div class="menu-container-mobile" id="menu">
     <img class="close-btn" src="assets/logo/icons8-close-30.png" alt="Close" onclick="toggleMenu()">
     <ul class="nav-menu-mobile">
@@ -28,9 +41,12 @@
     </ul>
 </div>
 
+<!-- Contact Form Section -->
     <div class="container">
         <h2>Contact Us</h2>
         <p class="form-quote"> We'll come back to you soon! </p>
+
+        <!-- Contact form -->
         <form id="contactForm">
             <label for="firstName">First Name:</label>
             <input type="text" id="firstName" required>
@@ -43,7 +59,8 @@
             
             <label for="message">Message:</label>
             <textarea id="message" required></textarea>
-            
+    
+            <!-- Button to return to the form -->
             <button type="submit">Submit</button>
         </form>
         
@@ -57,6 +74,7 @@
         </div>
     </div>
     
+    <!-- JavaScript for form handling and mobile menu -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/menu.js"></script>
 </body>
